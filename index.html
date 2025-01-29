@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Desktop App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="Spotify">
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-search"></i>
+                            <span>Search</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-book"></i>
+                            <span>Your Library</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-plus-square"></i>
+                            <span>Create Playlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-heart"></i>
+                            <span>Liked Songs</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="policies">
+                <ul>
+                    <li>
+                        <a href="#">Cookies</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="topbar">
+                <div class="prev-next-buttons">
+                    <button type="button" class="nav-btn" onclick="history.back()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button type="button" class="nav-btn" onclick="history.forward()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="navbar">
+                    <ul>
+                        <li>
+                            <a href="#">Premium</a>
+                        </li>
+                        <li>
+                            <a href="#">Support</a>
+                        </li>
+                        <li>
+                            <a href="#">Download</a>
+                        </li>
+                        <li class="divider">|</li>
+                        <li>
+                            <a href="#">Sign Up</a>
+                        </li>
+                        <li>
+                            <button class="login-btn">Log In</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="music-container">
+                <div class="featured-content">
+                    <h1>Good afternoon</h1>
+                    <div class="featured-tracks" id="featured-tracks">
+                        <!-- Featured tracks will be added here -->
+                    </div>
+                </div>
+
+                <div class="spotify-playlists">
+                    <div class="playlist-header">
+                        <h2>Made for You</h2>
+                        <span class="see-all">SEE ALL</span>
+                    </div>
+                    <div class="list" id="playlist-container">
+                        <!-- Playlist cards will be added here -->
+                    </div>
+                </div>
+
+                <div class="recently-played">
+                    <div class="playlist-header">
+                        <h2>Recently Played</h2>
+                        <span class="see-all">SEE ALL</span>
+                    </div>
+                    <div class="list" id="recent-container">
+                        <!-- Recently played tracks will be added here -->
+                    </div>
+                </div>
+
+                <div class="charts">
+                    <div class="playlist-header">
+                        <h2>Charts</h2>
+                        <span class="see-all">SEE ALL</span>
+                    </div>
+                    <div class="list" id="charts-container">
+                        <!-- Charts will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Now Playing Bar -->
+        <div class="now-playing-bar">
+            <div class="now-playing-left">
+                <img src="https://i.scdn.co/image/ab67616d00004851e8b066f70c206551210d902b" alt="Song Cover" id="current-track-image">
+                <div class="now-playing-info">
+                    <div class="track-name" id="current-track-name">Select a song to play</div>
+                    <div class="artist-name" id="current-artist-name">-</div>
+                </div>
+                <div class="track-controls">
+                    <button class="control-button like-button">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="control-button">
+                        <i class="fas fa-compress"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="now-playing-center">
+                <div class="player-controls">
+                    <button class="control-button shuffle">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button class="control-button previous" id="prev-button">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button class="control-button play" id="play-pause">
+                        <i class="far fa-play-circle"></i>
+                    </button>
+                    <button class="control-button next" id="next-button">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <button class="control-button repeat">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+                <div class="playback-bar">
+                    <span class="current-time" id="current-time">0:00</span>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <span class="total-time" id="total-time">0:00</span>
+                </div>
+            </div>
+
+            <div class="now-playing-right">
+                <button class="control-button">
+                    <i class="fas fa-list"></i>
+                </button>
+                <button class="control-button">
+                    <i class="fas fa-desktop"></i>
+                </button>
+                <button class="control-button volume">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <div class="volume-bar">
+                    <div class="volume-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio-player"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
